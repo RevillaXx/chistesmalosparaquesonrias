@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>ChisteCard - Carrusel</title>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <style>
@@ -16,7 +16,14 @@
         }
 
         /* Carrusel responsivo */
-        .swiper { width: 100%; max-width: 400px; height: 350px; }
+        .swiper { width: 100%; max-width: 400px; height: 450px; }
+        
+        /* Ajuste específico para móviles en vertical */
+        @media (max-height: 600px) {
+            .swiper { height: 350px; }
+            .card { width: 220px !important; height: 300px !important; }
+        }
+
         .swiper-slide { display: flex; justify-content: center; align-items: center; }
 
         /* Tarjetas */
@@ -49,8 +56,7 @@
 
     <div class="swiper">
         <div class="swiper-wrapper" id="carrusel">
-            <!-- Las tarjetas se generan por JS -->
-        </div>
+            </div>
     </div>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
